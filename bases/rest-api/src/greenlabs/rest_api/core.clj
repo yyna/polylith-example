@@ -31,14 +31,14 @@
                                     401 {:body {:success boolean?
                                                 :message string?}}}
                         :handler   handler/user-login}}]]
+     ["/send-verification-code" {:post {:form      {:phone-number string?}
+                                        :responses {200 {:body {:success boolean?}}}
+                                        :handler   handler/send-verification-code}}]
      ["/weather" {:get {:parameters {:query {:date string?}}
                         :responses  {200 {:body {:success boolean?}}
                                      404 {:body {:success boolean?
                                                  :message string?}}}
-                        :handler    handler/weather}}]
-     ["/send-verification-code" {:post {:form      {:phone-number string?}
-                                        :responses {200 {:body {:success boolean?}}}
-                                        :handler   handler/send-verification-code}}]]
+                        :handler    handler/weather}}]]
     {:data {:coercion   reitit.coercion.spec/coercion
             :muuntaja   m/instance
             :middleware middlewares}})))
