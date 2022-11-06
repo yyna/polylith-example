@@ -1,0 +1,1 @@
+(ns greenlabs.weather.interface)

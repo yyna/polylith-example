@@ -1,0 +1,12 @@
+{
+    "calva.replConnectSequences": [
+        {
+            "projectType": "deps.edn",
+            "name": "polylith-example",
+            "cljsType": "none",
+            "menuSelections": {
+                "cljAliases": ["dev", "test", "+default"]
+            }
+        }
+    ]
+}
