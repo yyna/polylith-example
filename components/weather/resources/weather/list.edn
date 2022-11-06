@@ -1,0 +1,9 @@
+[{:date        "2022-11-07"
+  :temperature 10
+  :humidity    30}
+ {:date        "2022-11-08"
+  :temperature 11
+  :humidity    20}
+ {:date        "2022-11-09"
+  :temperature 9
+  :humidity    10}]

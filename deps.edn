@@ -1,20 +1,23 @@
-{:aliases {:dev  {:extra-paths ["development/src"
-                                "bases/rest-api/src"
-                                "bases/rest-api/resources"
-                                "components/sms/src"
-                                "components/sms/resources"
-                                "components/user/src"
-                                "components/user/resources"
-                                "components/weather/src"
-                                "components/weather/resources"]
-                  :extra-deps  {org.clojure/clojure {:mvn/version "1.11.1"}}}
+{:aliases {:dev    {:extra-paths ["development/src"
+                                  "development/resources"
+                                  "bases/rest-api/src"
+                                  "bases/rest-api/resources"
+                                  "components/weather/src"
+                                  "components/weather/resources"]}
 
-           :test {:extra-paths ["bases/rest-api/test"
-                                "components/sms/test"
-                                "components/user/test"
-                                "components/weather/test"]}
+           :+korea {:extra-paths ["components/user/src"
+                                  "components/user/resources"]
+                    :extra-deps  {poly/rest-api                  {:local/root "projects/farm-morning"}
+                                  info.sunng/ring-jetty9-adapter {:mvn/version "0.18.1"}
+                                  metosin/reitit                 {:mvn/version "0.5.18"}}}
 
-           :poly {:main-opts  ["-m" "polylith.clj.core.poly-cli.core"]
-                  :extra-deps {polyfy/polylith {:git/url   "https://github.com/polyfy/polylith"
-                                                :sha       "f15e08ae01ee29d59f7eb1e80f52be6bc19f8eff"
-                                                :deps/root "projects/poly"}}}}}
+           :test   {:extra-paths ["bases/rest-api/test"
+                                  "components/sms/test"
+                                  "components/user/test"
+                                  "components/weather/test"
+                                  "projects/farm-morning/test"]}
+
+           :poly   {:main-opts  ["-m" "polylith.clj.core.poly-cli.core"]
+                    :extra-deps {polyfy/polylith {:git/url   "https://github.com/polyfy/polylith"
+                                                  :sha       "f15e08ae01ee29d59f7eb1e80f52be6bc19f8eff"
+                                                  :deps/root "projects/poly"}}}}}

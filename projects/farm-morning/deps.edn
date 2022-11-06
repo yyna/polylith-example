@@ -1,5 +1,9 @@
-{:deps {org.clojure/clojure {:mvn/version "1.10.1"}
-        org.clojure/tools.deps.alpha {:mvn/version "0.12.985"}}
+{:deps    {poly/rest-api                {:local/root "../../bases/rest-api"}
+           poly/user                    {:local/root "../../components/user"}
+           poly/weather                 {:local/root "../../components/weather"}
 
- :aliases {:test {:extra-paths []
+           org.clojure/clojure          {:mvn/version "1.10.1"}
+           org.clojure/tools.deps.alpha {:mvn/version "0.12.985"}}
+
+ :aliases {:test {:extra-paths ["test"]
                   :extra-deps  {}}}}

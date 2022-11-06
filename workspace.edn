@@ -1,6 +1,6 @@
 {:top-namespace        "greenlabs"
  :interface-ns         "interface"
- :default-profile-name "default"
+ :default-profile-name "korea"
  :compact-views        #{}
  :vcs                  {:name     "git"
                         :auto-add false}

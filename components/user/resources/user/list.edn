@@ -1,0 +1,6 @@
+[{:phone-number "010-1111-1111"
+  :password     "1234"}
+ {:phone-number "010-1111-2222"
+  :password     "0000"}
+ {:phone-number "010-1111-3333"
+  :password     "1111"}]
