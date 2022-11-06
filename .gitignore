@@ -30,10 +30,13 @@ projects/**/pom.xml
 .nrepl-port
 
 # clojure-lsp
-.lsp/.cache
+.lsp
 
 # clj-kondo
-.clj-kondo/.cache
+.clj-kondo
 
 # Calva VS Code Extension
-.calva/output-window/output.calva-repl
+.calva
+
+# VS Code
+.vscode
