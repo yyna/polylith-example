@@ -6,5 +6,6 @@
                         :auto-add false}
  :tag-patterns         {:stable  "v[0-9]*"
                         :release "v[0-9]*"}
- :projects             {"development"  {:alias "dev"}
-                        "farm-morning" {:alias "fmn"}}}
+ :projects             {"development"     {:alias "dev"}
+                        "farm-morning"    {:alias "korea"}
+                        "farm-morning-jp" {:alias "japan"}}}

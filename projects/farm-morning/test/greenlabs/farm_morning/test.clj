@@ -3,7 +3,7 @@
 
 (deftest test-in-farm-morning
   (testing "farm-morning project"
-    (println "farm-morning project 🍟")
+    (println "farm-morning project 🇰🇷")
     (is (= true true))))
 
 (comment

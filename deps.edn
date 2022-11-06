@@ -3,20 +3,25 @@
                                   "bases/rest-api/src"
                                   "bases/rest-api/resources"
                                   "components/weather/src"
-                                  "components/weather/resources"]}
-
-           :+korea {:extra-paths ["components/user/src"
-                                  "components/user/resources"
-                                  "components/sms/src"]
-                    :extra-deps  {poly/rest-api                  {:local/root "projects/farm-morning"}
-                                  info.sunng/ring-jetty9-adapter {:mvn/version "0.18.1"}
+                                  "components/weather/resources"
+                                  "components/user/src"
+                                  "components/user/resources"]
+                    :extra-deps  {info.sunng/ring-jetty9-adapter {:mvn/version "0.18.1"}
                                   metosin/reitit                 {:mvn/version "0.5.18"}}}
 
+           :+korea {:extra-paths ["components/sms/src"
+                                  "components/sms/test"]
+                    :extra-deps  {poly/rest-api {:local/root "projects/farm-morning"}}}
+
+           :+japan {:extra-paths ["components/sms-jp/src"
+                                  "components/sms-jp/test"]
+                    :extra-deps  {poly/rest-api {:local/root "projects/farm-morning-jp"}}}
+
            :test   {:extra-paths ["bases/rest-api/test"
-                                  "components/sms/test"
                                   "components/user/test"
                                   "components/weather/test"
-                                  "projects/farm-morning/test"]}
+                                  "projects/farm-morning/test"
+                                  "projects/farm-morning-jp/test"]}
 
            :poly   {:main-opts  ["-m" "polylith.clj.core.poly-cli.core"]
                     :extra-deps {polyfy/polylith {:git/url   "https://github.com/polyfy/polylith"
