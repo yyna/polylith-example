@@ -35,7 +35,10 @@
                         :responses  {200 {:body {:success boolean?}}
                                      404 {:body {:success boolean?
                                                  :message string?}}}
-                        :handler    handler/weather}}]]
+                        :handler    handler/weather}}]
+     ["/send-verification-code" {:post {:form      {:phone-number string?}
+                                        :responses {200 {:body {:success boolean?}}}
+                                        :handler   handler/send-verification-code}}]]
     {:data {:coercion   reitit.coercion.spec/coercion
             :muuntaja   m/instance
             :middleware middlewares}})))

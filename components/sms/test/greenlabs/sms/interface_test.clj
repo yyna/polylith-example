@@ -3,9 +3,9 @@
             [greenlabs.sms.interface :as sms]))
 
 
-(deftest send-sms-test
-  (testing "메시지 전송"
-    (is (= "send sms to 010-9999-0000: 안녕하세요 via 🍎" (sms/send-sms "010-9999-0000" "안녕하세요")))))
+(deftest send-verification-code-test
+  (testing "인증 메시지 전송"
+    (is (= "🇰🇷 인증 번호는 123456 입니다." (sms/send-verification-code "010-9999-0000" 123456)))))
 
 (comment
   (run-tests))

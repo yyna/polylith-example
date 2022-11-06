@@ -1,6 +1,7 @@
 (ns greenlabs.rest-api.handler
   (:require [greenlabs.user.interface :as user]
-            [greenlabs.weather.interface :as weather]))
+            [greenlabs.weather.interface :as weather]
+            [greenlabs.sms.interface :as sms]))
 
 (defn user-register
   [{{:keys [phone-number password]} :body-params}]
@@ -30,3 +31,9 @@
     {:status 404
      :body   {:success false
               :message "날씨 정보가 없습니다."}}))
+
+(defn send-verification-code
+  [{{:keys [phone-number]} :body-params}]
+  (println (sms/send-verification-code phone-number (rand-int 1000000)))
+  {:status 200
+   :body   {:success true}})

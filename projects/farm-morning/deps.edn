@@ -1,6 +1,7 @@
 {:deps    {poly/rest-api                {:local/root "../../bases/rest-api"}
            poly/user                    {:local/root "../../components/user"}
            poly/weather                 {:local/root "../../components/weather"}
+           poly/sms                     {:local/root "../../components/sms"}
 
            org.clojure/clojure          {:mvn/version "1.10.1"}
            org.clojure/tools.deps.alpha {:mvn/version "0.12.985"}}
