@@ -5,7 +5,6 @@
 
 (defn user-register
   [{{:keys [phone-number password]} :body-params}]
-  (println "phone-number password" phone-number password)
   (if (user/register phone-number password)
     {:status 200
      :body   {:success true}}
