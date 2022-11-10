@@ -28,6 +28,9 @@ jobs:
       - name: Get changed or affected projects
         run: echo "CHANGED_OR_AFFECTED_PROJECTS=$(clojure -M:poly ws get:changes:changed-or-affected-projects)" >> $GITHUB_ENV
 
+      - name: print CHANGED_OR_AFFECTED_PROJECTS
+        run: echo $CHANGED_OR_AFFECTED_PROJECTS
+
       - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning"')
         name: Build
         run: echo "build 🍋"
