@@ -1,4 +1,4 @@
-name: "[PROD] farm-morning 배포"
+name: "[PROD] farm-morning-jp 배포"
 
 on:
   workflow_dispatch:
@@ -37,9 +37,9 @@ jobs:
       - name: test changes
         run: clojure -M:poly ws get:changes
 
-      - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning"')
+      - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning-jp"')
         name: Build
         run: echo "build 🍋"
 
       - name: Deploy
-        run: echo "deploy  🍉"
+        run: echo "deploy 🍉"
