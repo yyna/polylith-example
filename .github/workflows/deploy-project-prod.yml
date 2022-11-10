@@ -7,8 +7,11 @@ on:
       - main
 
 jobs:
-  setup:
+  check:
     runs-on: ubuntu-20.04
+
+    outputs:
+      changed_or_afftected_projects: ${{ steps.get-poly-ws.outputs.changed_or_afftected_projects }}
 
     steps:
       - name: Checkout source code
@@ -26,10 +29,17 @@ jobs:
           cli: 1.11.1.1182
 
       - name: Get changed or affected projects
-        run: echo "CHANGED_OR_AFFECTED_PROJECTS=$(clojure -M:poly ws get:changes:changed-or-affected-projects)" >> $GITHUB_ENV
+        id: get-poly-ws
+        run: echo "changed_or_afftected_projects=$(clojure -M:poly ws get:changes:changed-or-affected-projects)" >> $GITHUB_OUTPUT
 
-      - if: contains("$CHANGED_OR_AFFECTED_PROJECTS", '"farm-morning-jp"')
-        name: Build
+  build-and-deply:
+    runs-on: ubuntu-20.04
+    needs: [check]
+
+    steps:
+      - if: contains(needs.check.outputs.changed_or_afftected_projects, '"farm-morning-jp"')
+
+      - name: Build
         run: echo "build 🍋"
 
       - name: Deploy
