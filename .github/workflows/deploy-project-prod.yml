@@ -35,6 +35,7 @@ jobs:
         run: echo $CHANGED_OR_AFFECTED_PROJECTS
 
       - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, 'farm-morning')
+        name: contains test
         run: echo $CHANGED_OR_AFFECTED_PROJECTS
 
   # deploy:
