@@ -42,4 +42,4 @@ jobs:
         run: echo "build 🍋"
 
       - name: Deploy
-        run: echo "deploy 🍉"
+        run: echo "deploy  🍉"
