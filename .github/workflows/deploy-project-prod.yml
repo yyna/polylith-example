@@ -16,9 +16,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: git log
-        run: git log --oneline --tags
-
       - uses: actions/setup-java@v3
         with:
           distribution: "zulu"
@@ -31,13 +28,7 @@ jobs:
       - name: Get changed or affected projects
         run: echo "CHANGED_OR_AFFECTED_PROJECTS=$(clojure -M:poly ws get:changes:changed-or-affected-projects)" >> $GITHUB_ENV
 
-      - name: print CHANGED_OR_AFFECTED_PROJECTS
-        run: echo $CHANGED_OR_AFFECTED_PROJECTS
-
-      - name: test changes
-        run: clojure -M:poly ws get:changes
-
-      - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning-jp"')
+      - if: contains($CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning-jp"')
         name: Build
         run: echo "build 🍋"
 
