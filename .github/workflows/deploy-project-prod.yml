@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: git log
-        run: git log --oneline
+        run: git log --oneline --tags
 
       - uses: actions/setup-java@v3
         with:
