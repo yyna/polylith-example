@@ -1,4 +1,4 @@
-name: "[PROD] farm-morning-jp 배포"
+name: "[PROD] farm-morning 배포"
 
 on:
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
   build-and-deply:
     runs-on: ubuntu-20.04
     needs: [check]
-    if: contains(needs.check.outputs.changed_or_afftected_projects, '"farm-morning-jp"')
+    if: contains(needs.check.outputs.changed_or_afftected_projects, '"farm-morning"')
 
     steps:
       - name: Build
