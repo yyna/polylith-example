@@ -31,11 +31,10 @@ jobs:
       - name: Get changed or affected projects
         run: echo "CHANGED_OR_AFFECTED_PROJECTS=$(clojure -M:poly ws get:changes:changed-or-affected-projects)" >> $GITHUB_ENV
 
-  deploy:
-    runs-on: ubuntu-20.04
+      - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning"')
 
-    if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning"')
+      - name: Build
+        run: echo "build 🍋"
 
-    steps:
-      - name: Build uberjar
-        run: echo "build and deploy 🍋"
+      - name: Deploy
+        run: echo "deploy 🍉"
