@@ -33,6 +33,9 @@ jobs:
       - name: Get changed or affected projects
         run: echo "CHANGED_OR_AFFECTED_PROJECTS=$(clojure -M:poly ws get:changes:changed-or-affected-projects)" >> $GITHUB_ENV
 
+      - name: println env
+        run: echo $CHANGED_OR_AFFECTED_PROJECTS
+
   deploy:
     runs-on: ubuntu-20.04
 
