@@ -36,25 +36,25 @@ jobs:
       - name: println env
         run: echo $CHANGED_OR_AFFECTED_PROJECTS
 
-  deploy:
-    runs-on: ubuntu-20.04
+  # deploy:
+  #   runs-on: ubuntu-20.04
 
-    if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, 'farm-morning')
+  #   if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, 'farm-morning')
 
-    permissions:
-      id-token: write
-      contents: read
+  #   permissions:
+  #     id-token: write
+  #     contents: read
 
-    steps:
-      - name: Cache maven
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.m2/repository
-            ~/.gitlibs
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/deps.edn') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+  #   steps:
+  #     - name: Cache maven
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: |
+  #           ~/.m2/repository
+  #           ~/.gitlibs
+  #         key: ${{ runner.os }}-maven-${{ hashFiles('**/deps.edn') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-maven-
 
-      - name: Build uberjar
-        run: echo "build and deploy 🍋"
+  #     - name: Build uberjar
+  #       run: echo "build and deploy 🍋"
