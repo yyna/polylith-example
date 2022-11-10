@@ -31,8 +31,8 @@ jobs:
       - name: print CHANGED_OR_AFFECTED_PROJECTS
         run: echo $CHANGED_OR_AFFECTED_PROJECTS
 
-      - name: test changed components
-        run: clojure -M:poly ws get:changes:changed-components
+      - name: test changes
+        run: clojure -M:poly ws get:changes
 
       - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, '"farm-morning"')
         name: Build
