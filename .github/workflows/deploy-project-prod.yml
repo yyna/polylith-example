@@ -35,10 +35,9 @@ jobs:
   build-and-deply:
     runs-on: ubuntu-20.04
     needs: [check]
+    if: contains(needs.check.outputs.changed_or_afftected_projects, '"farm-morning-jp"')
 
     steps:
-      - if: contains(needs.check.outputs.changed_or_afftected_projects, '"farm-morning-jp"')
-
       - name: Build
         run: echo "build 🍋"
 
