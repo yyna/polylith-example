@@ -34,6 +34,9 @@ jobs:
       - name: println env
         run: echo $CHANGED_OR_AFFECTED_PROJECTS
 
+      - if: contains(env.CHANGED_OR_AFFECTED_PROJECTS, 'farm-morning')
+        run: echo $CHANGED_OR_AFFECTED_PROJECTS
+
   # deploy:
   #   runs-on: ubuntu-20.04
 
