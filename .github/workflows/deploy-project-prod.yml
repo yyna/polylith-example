@@ -16,6 +16,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: git log
+        run: git log --oneline
+
       - uses: actions/setup-java@v3
         with:
           distribution: "zulu"
