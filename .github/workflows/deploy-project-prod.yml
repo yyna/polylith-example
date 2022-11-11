@@ -32,7 +32,7 @@ jobs:
         id: get-poly-ws
         run: echo "changed_or_afftected_projects=$(clojure -M:poly ws get:changes:changed-or-affected-projects)" >> $GITHUB_OUTPUT
 
-  build-and-deply:
+  deploy:
     runs-on: ubuntu-20.04
     needs: [check]
     if: contains(needs.check.outputs.changed_or_afftected_projects, '"farm-morning"')
