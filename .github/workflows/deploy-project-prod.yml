@@ -32,6 +32,9 @@ jobs:
         id: get-poly-ws
         run: echo "changed_or_afftected_projects=$(clojure -M:poly ws get:changes:changed-or-affected-projects | tr -d '\n')" >> $GITHUB_OUTPUT
 
+      - name: test
+        run: echo "$(clojure -M:poly ws get:changes:changed-or-affected-projects | tr -d '\n')"
+
   deploy:
     runs-on: ubuntu-20.04
     needs: [check]
